@@ -1,0 +1,6 @@
+<form class="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="text" class="form-control" name="todo-desc" placeholder="Add new to-do" [(ngModel)]="description">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="submitted">Add</button>
+</form>

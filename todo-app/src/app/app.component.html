@@ -1,0 +1,17 @@
+<h1>
+  To-Do List
+</h1>
+
+<div *ngIf="todoList.length > 0">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let value of todoList" style="margin-bottom: 5px">
+      <todo-item [item]="value" (itemDeleted)="onItemDeleted($event)" (itemToggled)="onItemToggled($event)"></todo-item>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="todoList.length == 0">
+  <em>You do not have any tasks right now.</em>
+</div>
+
+<todo-add-form (itemAdded)="onItemAdded($event)"></todo-add-form>

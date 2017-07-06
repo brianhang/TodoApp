@@ -1,0 +1,15 @@
+<div class="checkbox" style="margin-top: 0; margin-bottom: 0">
+  <label>
+    <input type="checkbox" [(ngModel)]="item.done" (change)="toggle($event)" />
+
+    <div *ngIf="item.done">
+      <del>{{item.description}}</del>
+    </div>
+    <div *ngIf="!item.done">
+      {{item.description}}
+    </div>
+  </label>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="delete()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
